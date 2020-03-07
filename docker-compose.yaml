@@ -1,0 +1,25 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - '5000:5000'
+    volumes:
+      - .:/code
+    command: flask run --host=0.0.0.0
+    environment: 
+      - FLASK_APP=main.py
+      - FLASK_ENV=development
+      - LC_ALL=C.UTF-8
+      - LANG=C.UTF-8
+  db:
+    image: 'mongo'
+    container_name: 'mongo-db'
+    environment:
+      - MONGO_INITDB_DATABASE=transactions
+      - MONGO_INITDB_ROOT_USERNAME=george
+      - MONGO_INITDB_ROOT_PASSWORD=123siatat
+    volumes:
+      - /tmp/mongo-volume:/data/db
+    ports:
+      - '27017-27019:27017-27019'
