@@ -1,0 +1,32 @@
+[
+  {
+    "productName": "Avira Prime",
+    "stock": "100",
+    "price": "75"
+  },
+  {
+    "productName": "Avira VPN",
+    "stock": "100",
+    "price": "50"
+  },
+  {
+    "productName": "Optimizer",
+    "stock": "100",
+    "price": "10"
+  },
+  {
+    "productName": "Antivirus Pro",
+    "stock": "100",
+    "price": "35"
+  },
+  {
+    "productName": "Password Manager",
+    "stock": "100",
+    "price": "20"
+  },
+  {
+    "productName": "System Speedup",
+    "stock": "100",
+    "price": "25"
+  }
+]
