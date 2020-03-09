@@ -11,6 +11,8 @@ If installing docker for the first time, you'll need to reboot your machine afte
 2. Start the services
     
     `sudo systemctl start docker` or `sudo service docker start` depending on distribution.
+    
+    
     `docker-compose up -d`
     
 3. Run the vending machine program
