@@ -5,12 +5,12 @@ are pretty high and usually people do not have that much cash on them.
 
 ## How the vending machine works
 Our vending machine is mostly a state machine, has 3 states: 
-    * start where you can choose if you wanna see the stocks of the products or not
-    * showstock where a list of all the products and its current stock its displayed
-    * buy this is the transaction state after you selected a product, you'll get a prompt to 
-    insert your card details, after that the transaction is sent to the server to verify and 
-    charge you, the server responds wih the status of the transaction, if its succesfull your
-    product will be dispensed
+* start where you can choose if you wanna see the stocks of the products or not
+* showstock where a list of all the products and its current stock its displayed
+* buy this is the transaction state after you selected a product, you'll get a prompt to 
+insert your card details, after that the transaction is sent to the server to verify and 
+charge you, the server responds wih the status of the transaction, if it's succesfull your
+product will be dispensed
 
 ## How the server works
 The server gets transaction requests from the vending machine, with all of the card details in the request. 
@@ -20,7 +20,7 @@ it can be checked later.
 
 ## How to run
 First install any dependencies you might not have on your machine:
-    * `docker`
+`docker`
     * `docker-compose`
     * `git`
 
