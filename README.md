@@ -20,9 +20,9 @@ it can be checked later.
 
 ## How to run
 First install any dependencies you might not have on your machine:
-`docker`
-    * `docker-compose`
-    * `git`
+* `docker`
+* `docker-compose`
+* `git`
 
 Then:
 
