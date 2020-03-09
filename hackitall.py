@@ -34,6 +34,11 @@ def check_stock():
     return d
 
 
+def save_stock(stock):
+    f = open('stock.json', "w")
+    json.dump(stock, f)
+
+
 states = ['start', 'showstock', 'buy']
 
 
@@ -65,7 +70,6 @@ def take_input():
                 currentState += 1
                 state = states[currentState]
         elif state == 'buy':
-            print("We'll you're kinda buying")
             if int(boughtProduct['stock']) > 0:
                 print("Please enter your card details: ")
 
@@ -93,12 +97,13 @@ def take_input():
                 if r.json()['result'] == True:
                     boughtProduct['stock'] = str(
                         int(boughtProduct['stock']) - 1)
+                    save_stock(stock)
                     print("Transaction completed")
                     print("Do you want to purchase anything else?[y/n]")
                     confirm = input()
                     if confirm == "y":
                         currentState = 0
-                        state = states[0]   
+                        state = states[0]
                         continue
                     else:
                         exit()
@@ -108,7 +113,7 @@ def take_input():
                     confirm = input()
                     if confirm == "y":
                         currentState = 0
-                        state = states[0]   
+                        state = states[0]
                         continue
                     else:
                         exit()
