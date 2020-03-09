@@ -47,6 +47,8 @@ def take_input():
             os.system('clear')
             print_inputs(0)
             i = input()
+            if int(i) == 2:
+                exit()
             currentState += 1
             state = states[currentState]
         elif state == 'showstock':
@@ -74,7 +76,7 @@ def take_input():
 
                 transaction_id = random.getrandbits(128)
 
-                url = "http://192.168.0.123:5000/transaction/" + \
+                url = "http://web:5000/transaction/" + \
                     str(transaction_id)
                 payload = {
                     'productName': boughtProduct['productName'],
@@ -88,12 +90,28 @@ def take_input():
                 r = requests.post(url, data=json.dumps(
                     payload), headers=headers)
 
-                if int(r.json()['result']) == 42:
+                if r.json()['result'] == True:
                     boughtProduct['stock'] = str(
                         int(boughtProduct['stock']) - 1)
-                    print("Verifying transaction!")
+                    print("Transaction completed")
+                    print("Do you want to purchase anything else?[y/n]")
+                    confirm = input()
+                    if confirm == "y":
+                        currentState = 0
+                        state = states[0]   
+                        continue
+                    else:
+                        exit()
                 else:
                     print("Transaction failed!")
+                    print("Do you want to purchase anything else?[y/n]")
+                    confirm = input()
+                    if confirm == "y":
+                        currentState = 0
+                        state = states[0]   
+                        continue
+                    else:
+                        exit()
             else:
                 print("The stock is empty!")
                 currentState = 1
