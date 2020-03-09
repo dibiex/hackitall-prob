@@ -30,10 +30,7 @@ Then:
 
     `git clone https://github.com/dixi3/hackitall-prob.git`
 
-2. Start the services
-    
-    `sudo systemctl start docker` or `sudo service docker start` depending on distribution.
-    
+2. Start the services    
     
     `docker-compose up -d`
 
